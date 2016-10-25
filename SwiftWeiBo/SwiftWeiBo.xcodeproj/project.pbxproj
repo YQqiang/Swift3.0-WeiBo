@@ -140,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				C70D853E1DBF3A94009D01D0 /* Main(主要) */,
-				C70D853C1DBF3A94009D01D0 /* Discover(发现) */,
 				C70D853D1DBF3A94009D01D0 /* Home(首页) */,
 				C70D853F1DBF3A94009D01D0 /* Message(消息) */,
+				C70D853C1DBF3A94009D01D0 /* Discover(发现) */,
 				C70D85401DBF3A94009D01D0 /* Profile(我) */,
 			);
 			path = Classes;
