@@ -14,6 +14,11 @@
 		C70D85181DBF399E009D01D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70D85161DBF399E009D01D0 /* LaunchScreen.storyboard */; };
 		C70D85231DBF399E009D01D0 /* SwiftWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85221DBF399E009D01D0 /* SwiftWeiBoTests.swift */; };
 		C70D852E1DBF399E009D01D0 /* SwiftWeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D852D1DBF399E009D01D0 /* SwiftWeiBoUITests.swift */; };
+		C70D854C1DBF3E8F009D01D0 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D854B1DBF3E8F009D01D0 /* DiscoverViewController.swift */; };
+		C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */; };
+		C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */; };
+		C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */; };
+		C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		C70D85291DBF399E009D01D0 /* SwiftWeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftWeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70D852D1DBF399E009D01D0 /* SwiftWeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWeiBoUITests.swift; sourceTree = "<group>"; };
 		C70D852F1DBF399E009D01D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C70D854B1DBF3E8F009D01D0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 		C70D850C1DBF399E009D01D0 /* SwiftWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				C70D853B1DBF3A94009D01D0 /* Classes */,
 				C70D850D1DBF399E009D01D0 /* AppDelegate.swift */,
 				C70D850F1DBF399E009D01D0 /* ViewController.swift */,
 				C70D85111DBF399E009D01D0 /* Main.storyboard */,
@@ -123,6 +134,63 @@
 				C70D852F1DBF399E009D01D0 /* Info.plist */,
 			);
 			path = SwiftWeiBoUITests;
+			sourceTree = "<group>";
+		};
+		C70D853B1DBF3A94009D01D0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C70D853E1DBF3A94009D01D0 /* Main(主要) */,
+				C70D853C1DBF3A94009D01D0 /* Discover(发现) */,
+				C70D853D1DBF3A94009D01D0 /* Home(首页) */,
+				C70D853F1DBF3A94009D01D0 /* Message(消息) */,
+				C70D85401DBF3A94009D01D0 /* Profile(我) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C70D853C1DBF3A94009D01D0 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				C70D854B1DBF3E8F009D01D0 /* DiscoverViewController.swift */,
+			);
+			name = "Discover(发现)";
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		C70D853D1DBF3A94009D01D0 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */,
+			);
+			name = "Home(首页)";
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C70D853E1DBF3A94009D01D0 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */,
+			);
+			name = "Main(主要)";
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C70D853F1DBF3A94009D01D0 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */,
+			);
+			name = "Message(消息)";
+			path = Message;
+			sourceTree = "<group>";
+		};
+		C70D85401DBF3A94009D01D0 /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+				C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */,
+			);
+			name = "Profile(我)";
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C70D854C1DBF3E8F009D01D0 /* DiscoverViewController.swift in Sources */,
 				C70D85101DBF399E009D01D0 /* ViewController.swift in Sources */,
 				C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */,
+				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
+				C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */,
+				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
+				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = SwiftWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kjlink.SwiftWeiBo;
@@ -422,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = SwiftWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kjlink.SwiftWeiBo;
