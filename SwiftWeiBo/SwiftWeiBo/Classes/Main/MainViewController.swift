@@ -12,7 +12,7 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+/*
         //1.获取文件json路径
         /*
          guard
@@ -84,6 +84,7 @@ class MainViewController: UITabBarController {
 //        addChildControllerWithNav(chiledVC: MessageViewController(), title: "消息", imageName: "tabbar_message_center")
 //        addChildControllerWithNav(chiledVC: DiscoverViewController(), title: "发现", imageName: "tabbar_discover")
 //        addChildControllerWithNav(chiledVC: ProfileViewController(), title: "我", imageName: "tabbar_profile")
+ */
     }
     
     fileprivate func addChildViewController(_ childVCName: String, title: String, imageName: String) {
