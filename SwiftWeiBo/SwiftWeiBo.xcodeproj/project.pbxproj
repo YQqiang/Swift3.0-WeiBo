@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C706444A1DC0364C0045D613 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70644491DC0364C0045D613 /* Null.storyboard */; };
+		C706444C1DC036820045D613 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C706444B1DC036820045D613 /* MainVCSettings.json */; };
+		C706444F1DC037E80045D613 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706444E1DC037E80045D613 /* VisitorView.swift */; };
+		C70644511DC037F80045D613 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70644501DC037F80045D613 /* VisitorView.xib */; };
+		C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70644541DC0384C0045D613 /* BaseViewController.swift */; };
 		C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D850D1DBF399E009D01D0 /* AppDelegate.swift */; };
 		C70D85101DBF399E009D01D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D850F1DBF399E009D01D0 /* ViewController.swift */; };
 		C70D85131DBF399E009D01D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70D85111DBF399E009D01D0 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70644491DC0364C0045D613 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
+		C706444B1DC036820045D613 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		C706444E1DC037E80045D613 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		C70644501DC037F80045D613 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		C70644541DC0384C0045D613 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C70D850A1DBF399E009D01D0 /* SwiftWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70D850D1DBF399E009D01D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70D850F1DBF399E009D01D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +94,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C70644481DC0362D0045D613 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C70644491DC0364C0045D613 /* Null.storyboard */,
+				C706444B1DC036820045D613 /* MainVCSettings.json */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		C706444D1DC037C40045D613 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				C70644541DC0384C0045D613 /* BaseViewController.swift */,
+				C706444E1DC037E80045D613 /* VisitorView.swift */,
+				C70644501DC037F80045D613 /* VisitorView.xib */,
+			);
+			name = Visitor;
+			sourceTree = "<group>";
+		};
 		C70D85011DBF399D009D01D0 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +198,8 @@
 		C70D853E1DBF3A94009D01D0 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				C706444D1DC037C40045D613 /* Visitor */,
+				C70644481DC0362D0045D613 /* Resource */,
 				C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */,
 			);
 			name = "Main(主要)";
@@ -301,8 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70D85181DBF399E009D01D0 /* LaunchScreen.storyboard in Resources */,
+				C706444C1DC036820045D613 /* MainVCSettings.json in Resources */,
+				C706444A1DC0364C0045D613 /* Null.storyboard in Resources */,
 				C70D85151DBF399E009D01D0 /* Assets.xcassets in Resources */,
 				C70D85131DBF399E009D01D0 /* Main.storyboard in Resources */,
+				C70644511DC037F80045D613 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +366,10 @@
 				C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */,
 				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
 				C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */,
+				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
 				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
+				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +614,7 @@
 				C70D85341DBF399E009D01D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C70D85351DBF399E009D01D0 /* Build configuration list for PBXNativeTarget "SwiftWeiBoTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +623,7 @@
 				C70D85371DBF399E009D01D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C70D85381DBF399E009D01D0 /* Build configuration list for PBXNativeTarget "SwiftWeiBoUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +632,7 @@
 				C70D853A1DBF399E009D01D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
