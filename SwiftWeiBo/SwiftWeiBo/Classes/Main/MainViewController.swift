@@ -10,8 +10,30 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
+    // MARK:- 懒加载属性
+    fileprivate lazy var composeBtn: UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
+    
+    private lazy var imageNames = ["tabbar_home", "tabbar_message_center", "", "tabbar_discover", "tabbar_profile"]
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        //1.遍历所有的item
+        for i in 0 ..< tabBar.items!.count {
+            //2.获取item
+            let item = tabBar.items![i]
+            //3.如果下标为2,则不可以和用户交互
+            if i == 2 {
+                item.isEnabled = false
+                
+            }
+            //4.设置高亮图片
+            item.selectedImage = UIImage.init(named: imageNames[i] + "_highlighted")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupComposeBtn()
 /*
         //1.获取文件json路径
         /*
@@ -148,3 +170,37 @@ class MainViewController: UITabBarController {
     */
 
 }
+
+//MARK:- 设置UI界面
+extension MainViewController {
+    //设置发布按钮
+    fileprivate func setupComposeBtn() {
+        //1.将composeBtn添加到tabBar上
+        tabBar.addSubview(composeBtn)
+        //2.设置属性
+//        composeBtn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button"), for: UIControlState.normal)
+//        composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: UIControlState.highlighted)
+//        composeBtn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: UIControlState.normal)
+//        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: UIControlState.highlighted)
+//        composeBtn.sizeToFit()
+        //3.设置位置
+        composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
+        //4.监听发布按钮的点击
+        composeBtn.addTarget(self, action: #selector(MainViewController.clickcomposeBtn), for: .touchUpInside)
+    }
+}
+
+// MARK:- 事件监听
+extension MainViewController {
+    //事件监听的本质是发消息,但是发送消息是OC的特性.
+    //将方法包装成@SEL ----> 类中查找方法列表 ----> 根据@SEL找到imp指针(函数指针) ---> 执行函数.
+    //如果Swift中将一个函数声明为private, 那么该函数不会被添加到方法列表中
+    //如果在private 前加上 @objc ,那么该方法依然会被添加到方法列表中
+    @objc fileprivate func clickcomposeBtn() {
+        print("点击了发布按钮")
+    }
+}
+
+
+
+

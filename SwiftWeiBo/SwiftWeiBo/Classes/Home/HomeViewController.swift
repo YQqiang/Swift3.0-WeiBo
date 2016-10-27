@@ -8,96 +8,51 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    //mark: 懒加载
-    lazy var tableView: UITableView = UITableView()
+class HomeViewController: BaseViewController {
+    
+    // MARK:- 懒加载属性
+    lazy var titleButton: TitleButton = TitleButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        //1.没有登录时设置的内容
+        visistorView.addRotationAnim()
+        if !isLogin {
+            return
+        }
+        //2.设置导航栏内容
+        setupNavigationBar()
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        view.backgroundColor = UIColor.init(colorLiteralRed: Float(arc4random()%255)/255.0, green: Float(arc4random()%254)/255.0, blue: Float(arc4random()%255)/255.0, alpha: 1.0)
-//        printLog(messsage: 123)
-//    }
-    
-    func printLog<T>(messsage : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
-        
-        #if DEBUG
-            
-            let fileName = (file as NSString).lastPathComponent
-            
-            print("\(fileName):(\(lineNum))-\(messsage)")
-            
-        #endif
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-//mark: 延展
+// MARK:- 设置UI界面
 extension HomeViewController {
-    func setupUI() -> Void {
-        //1.将tableView加到控制器的View
-        view.addSubview(tableView)
-        //2.设置tableview的frame
-        tableView.frame = view.bounds
-        //3.设置数据源和代理
-        tableView.dataSource = self
-        tableView.delegate = self
+    fileprivate func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
+        //设置标题
+        titleButton.setTitle("逆行云", for: .normal)
+        titleButton.addTarget(self, action: #selector(HomeViewController.clickTitleBtn(sender:)), for: .touchUpInside)
+        navigationItem.titleView = titleButton
     }
 }
 
-//mark: tableView的数据源和代理
-//extension 和 OC中cartegory类似,也是只能扩充方法,不能扩充属性
-extension HomeViewController: UITableViewDataSource,UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 3
-        } else if section == 1 {
-            return 5
-        } else {
-            return 8
+//MARK:- 事件监听
+extension HomeViewController {
+    @objc fileprivate func clickTitleBtn(sender: TitleButton) {
+        //1.改变按钮状态
+        sender.isSelected = !sender.isSelected
+        //2.创建弹出的控制器
+        let popoverVC = PopViewController()
+        //3.设置控制器的modal样式
+        popoverVC.modalPresentationStyle = .custom
+        //4.弹出控制器
+        present(popoverVC, animated: true) { 
+            
         }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //1.创建cell
-        let cellID = "cell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellID)
-        }
-        //2.给cell数据
-        cell?.textLabel?.text = "第\(indexPath.section)组,第\(indexPath.row)行"
-        //3.返回cell
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        printLog(messsage: "点击了第\(indexPath.row)行")
     }
 }
+
 
 
 

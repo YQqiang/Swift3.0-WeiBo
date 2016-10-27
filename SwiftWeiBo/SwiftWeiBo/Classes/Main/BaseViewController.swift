@@ -10,86 +10,44 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
+    // MARK:- 懒加载属性
+    lazy var visistorView = VisitorView.visitorView()
+    
+    // MARK:- 定义变量
+    var isLogin: Bool = true
+    
+    // MARK:- 系统回调函数
+    override func loadView() {
+        isLogin ? super.loadView() : setupVisitorView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        setupNavigationItems()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+//MARK:- 设置UI界面
+extension BaseViewController {
+    fileprivate func setupVisitorView() {
+        view = visistorView
+        visistorView.registerBtn.addTarget(self, action: #selector(BaseViewController.registerAction), for: .touchUpInside)
+        visistorView.loginBtn.addTarget(self, action: #selector(BaseViewController.loginAction), for: .touchUpInside)
+    }
+    //设置导航栏左右的item
+    fileprivate func setupNavigationItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("注册", comment: ""), style: .plain, target: self, action: #selector(BaseViewController.registerAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("登录", comment: ""), style: .plain, target: self, action: #selector(BaseViewController.loginAction))
+    }
+}
+
+//MARK:- 事件监听
+extension BaseViewController {
+    @objc fileprivate func registerAction() {
+        print("点击注册按钮")
+    }
+    @objc fileprivate func loginAction() {
+        print("点击登录按钮")
+    }
+}
+

@@ -8,65 +8,83 @@
 
 import UIKit
 
-class MessageViewController: UIViewController {
-
-    lazy var redView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
+class MessageViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        let redView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
-        redView.center = view.center
-        redView.backgroundColor = UIColor.red
-        view.addSubview(redView)
-        redView.layer.cornerRadius = 5.0
-        redView.layer.borderColor = UIColor.cyan.cgColor
-        redView.layer.borderWidth = 2.0
-        
-        let x = 20.0
-        let margin = 20.0
-        let count = 4.0
-        let buttonW = (Double(view.frame.size.width) - 2.0 * x - (count - 1.0) * margin) / count
-        let titles = ["平移", "放大", "缩小", "旋转"]
-        for i in 0 ..< Int(count) {
-            let button = UIButton.init(frame: CGRect.init(x: x + ((margin + buttonW) * Double(i)), y: 64.0, width: buttonW, height: 44.0))
-            button.backgroundColor = UIColor.blue
-            button.setTitle(titles[i], for: UIControlState.normal)
-            button.tag = 1000 + i
-            button.addTarget(self, action: #selector(clickButton(sender:)), for: UIControlEvents.touchUpInside)
-            view.addSubview(button)
-        }
+        visistorView.setupVisitorViewInfo(iconName: "visitordiscover_image_message", title: "登录后，别人评论你的微博，给你发消息，都会在这里收到通知")
     }
     
-    func clickButton(sender: UIButton) -> Void {
-//        switch sender.tag - 1000 {
-//        case 0:
-//            redView.transform = cga
-//        case 1:
-//            
-//        case 2:
-//            
-//        case 3:
-//            
-//        default:
-//            print("other")
-//        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+    
+    /*
+     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+     
+     // Configure the cell...
+     
+     return cell
+     }
+     */
+    
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
+    /*
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
+    /*
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
+    /*
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

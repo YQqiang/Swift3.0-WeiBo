@@ -28,6 +28,11 @@
 		C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */; };
 		C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */; };
 		C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */; };
+		C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */; };
+		C76A364A1DC1F311001310E7 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A36491DC1F311001310E7 /* UIBarButtonItem-Extension.swift */; };
+		C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A364B1DC1F538001310E7 /* TitleButton.swift */; };
+		C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A364E1DC1F9B3001310E7 /* PopViewController.swift */; };
+		C76A36511DC1F9B3001310E7 /* PopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76A364F1DC1F9B3001310E7 /* PopViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		C76A36491DC1F311001310E7 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		C76A364B1DC1F538001310E7 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		C76A364E1DC1F9B3001310E7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		C76A364F1DC1F9B3001310E7 /* PopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +191,7 @@
 				C70D853F1DBF3A94009D01D0 /* Message(消息) */,
 				C70D853C1DBF3A94009D01D0 /* Discover(发现) */,
 				C70D85401DBF3A94009D01D0 /* Profile(我) */,
+				C734354F1DC199E400A6D138 /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 		C70D853D1DBF3A94009D01D0 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				C76A364D1DC1F9A0001310E7 /* UIPopover */,
 				C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */,
 				C70644641DC09AE90045D613 /* HomeViewController.storyboard */,
 			);
@@ -234,6 +246,33 @@
 			);
 			name = "Profile(我)";
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		C734354F1DC199E400A6D138 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C73435501DC199E400A6D138 /* Category */,
+				C76A364B1DC1F538001310E7 /* TitleButton.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		C73435501DC199E400A6D138 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */,
+				C76A36491DC1F311001310E7 /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C76A364D1DC1F9A0001310E7 /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				C76A364E1DC1F9B3001310E7 /* PopViewController.swift */,
+				C76A364F1DC1F9B3001310E7 /* PopViewController.xib */,
+			);
+			path = UIPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +385,7 @@
 				C70644651DC09AE90045D613 /* HomeViewController.storyboard in Resources */,
 				C70D85181DBF399E009D01D0 /* LaunchScreen.storyboard in Resources */,
 				C706444C1DC036820045D613 /* MainVCSettings.json in Resources */,
+				C76A36511DC1F9B3001310E7 /* PopViewController.xib in Resources */,
 				C706445D1DC05D0B0045D613 /* DiscoverViewController.storyboard in Resources */,
 				C706444A1DC0364C0045D613 /* Null.storyboard in Resources */,
 				C70D85151DBF399E009D01D0 /* Assets.xcassets in Resources */,
@@ -379,12 +419,16 @@
 			files = (
 				C70D854C1DBF3E8F009D01D0 /* DiscoverViewController.swift in Sources */,
 				C70D85101DBF399E009D01D0 /* ViewController.swift in Sources */,
+				C76A364A1DC1F311001310E7 /* UIBarButtonItem-Extension.swift in Sources */,
 				C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */,
+				C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */,
 				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
 				C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */,
 				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
+				C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
 				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
+				C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */,
 				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
