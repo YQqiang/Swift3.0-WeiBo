@@ -34,6 +34,7 @@
 		C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A364E1DC1F9B3001310E7 /* PopViewController.swift */; };
 		C76A36511DC1F9B3001310E7 /* PopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76A364F1DC1F9B3001310E7 /* PopViewController.xib */; };
 		C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */; };
+		C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C76A364E1DC1F9B3001310E7 /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		C76A364F1DC1F9B3001310E7 /* PopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopViewController.xib; sourceTree = "<group>"; };
 		C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
+		C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				C76A364E1DC1F9B3001310E7 /* PopViewController.swift */,
 				C76A364F1DC1F9B3001310E7 /* PopViewController.xib */,
 				C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */,
+				C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
 				C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
+				C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */,
 				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
 				C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */,
 				C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */,
