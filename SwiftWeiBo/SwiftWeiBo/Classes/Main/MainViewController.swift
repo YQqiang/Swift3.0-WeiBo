@@ -13,7 +13,7 @@ class MainViewController: UITabBarController {
     // MARK:- 懒加载属性
     fileprivate lazy var composeBtn: UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
     
-    private lazy var imageNames = ["tabbar_home", "tabbar_message_center", "", "tabbar_discover", "tabbar_profile"]
+    fileprivate lazy var imageNames = ["tabbar_home", "tabbar_message_center", "", "tabbar_discover", "tabbar_profile"]
     
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
@@ -142,7 +142,7 @@ class MainViewController: UITabBarController {
     //Swift支持方法重载
     //方法重载:方法名相同,参数不同-->1.参数的类型不同 2.参数的个数不同
     //private 在当前文件可以访问, 其他文件不能访问
-    private func addChildControllerWithNav(chiledVC: UIViewController, title: String, imageName: String) {
+    fileprivate func addChildControllerWithNav(_ chiledVC: UIViewController, title: String, imageName: String) {
         //1.设置自控制器的属性
         chiledVC.title = NSLocalizedString(title, comment: "")
         chiledVC.tabBarItem.image = UIImage.init(named: imageName)

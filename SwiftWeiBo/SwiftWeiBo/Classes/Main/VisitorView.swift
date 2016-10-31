@@ -23,7 +23,7 @@ class VisitorView: UIView {
     @IBOutlet weak var loginBtn: UIButton!
     
     // MARK:- 自定义函数
-    func setupVisitorViewInfo(iconName: String, title: String) {
+    func setupVisitorViewInfo(_ iconName: String, title: String) {
         iconView.image = UIImage(named: iconName)
         tipLabel.text = title
         rotationView.isHidden = true

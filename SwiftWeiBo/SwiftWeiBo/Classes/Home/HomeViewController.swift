@@ -14,7 +14,11 @@ class HomeViewController: BaseViewController {
     
     // MARK:- 懒加载属性
     fileprivate lazy var titleButton: TitleButton = TitleButton()
-    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
+    //注意: 在闭包中如果使用当前对象的属性或者调用方法,也需要加self
+    //两个地方需要使用self: 1> 如果在一个函数中出现歧义; 2> 在闭包中使用当前对象的属性或者调用方法.
+    fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) -> () in
+        self!.titleButton.isSelected = presented
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +39,14 @@ extension HomeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         //设置标题
         titleButton.setTitle("逆行云", for: .normal)
-        titleButton.addTarget(self, action: #selector(HomeViewController.clickTitleBtn(sender:)), for: .touchUpInside)
+        titleButton.addTarget(self, action: #selector(HomeViewController.clickTitleBtn(_:)), for: .touchUpInside)
         navigationItem.titleView = titleButton
     }
 }
 
 //MARK:- 事件监听
 extension HomeViewController {
-    @objc fileprivate func clickTitleBtn(sender: TitleButton) {
+    @objc fileprivate func clickTitleBtn(_ sender: TitleButton) {
         //1.改变按钮状态
         sender.isSelected = !sender.isSelected
         //2.创建弹出的控制器
