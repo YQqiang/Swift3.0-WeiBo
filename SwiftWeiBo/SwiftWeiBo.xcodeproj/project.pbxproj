@@ -41,6 +41,8 @@
 		C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */; };
 		C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */; };
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
+		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
+		C7F07F621DD4611900CA83A8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */; };
 		ED9A1F49C34DFD42EAD9A231 /* Pods_SwiftWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EB2F69623F05DC43A7B434 /* Pods_SwiftWeiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 		C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
+		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 		C70D853E1DBF3A94009D01D0 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				C7F07F5E1DD4610200CA83A8 /* Welcome */,
 				C7425EA11DD3FE60006EA6CE /* OAuth */,
 				C706444D1DC037C40045D613 /* Visitor */,
 				C70644481DC0362D0045D613 /* Resource */,
@@ -329,6 +334,15 @@
 				C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */,
 			);
 			path = UIPopover;
+			sourceTree = "<group>";
+		};
+		C7F07F5E1DD4610200CA83A8 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */,
+				C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */,
+			);
+			name = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +461,7 @@
 				C70644651DC09AE90045D613 /* HomeViewController.storyboard in Resources */,
 				C70D85181DBF399E009D01D0 /* LaunchScreen.storyboard in Resources */,
 				C706444C1DC036820045D613 /* MainVCSettings.json in Resources */,
+				C7F07F621DD4611900CA83A8 /* WelcomeViewController.xib in Resources */,
 				C76A36511DC1F9B3001310E7 /* PopViewController.xib in Resources */,
 				C7425EA51DD3FE9F006EA6CE /* OAuthViewController.xib in Resources */,
 				C706445D1DC05D0B0045D613 /* DiscoverViewController.storyboard in Resources */,
@@ -534,6 +549,7 @@
 				C76A364A1DC1F311001310E7 /* UIBarButtonItem-Extension.swift in Sources */,
 				C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */,
 				C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */,
+				C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */,
 				C7425EA41DD3FE9F006EA6CE /* OAuthViewController.swift in Sources */,
 				C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */,
 				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
