@@ -14,7 +14,7 @@ class BaseViewController: UITableViewController {
     lazy var visistorView = VisitorView.visitorView()
     
     // MARK:- 定义变量
-    var isLogin: Bool = true
+    var isLogin: Bool = false
     
     // MARK:- 系统回调函数
     override func loadView() {
@@ -48,6 +48,12 @@ extension BaseViewController {
     }
     @objc fileprivate func loginAction() {
         print("点击登录按钮")
+        //1.创建授权控制器
+        let oauthV = OAuthViewController()
+        //2.包装导航控制器
+        let nav = UINavigationController(rootViewController: oauthV)
+        //3.弹出控制器
+        present(nav, animated: true, completion: nil)
     }
 }
 
