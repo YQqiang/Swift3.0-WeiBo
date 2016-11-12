@@ -12,18 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var defaultViewController: UIViewController? {
+        let isLogin = UserAccountModel.shareIntance.isLogin
+        return isLogin ? WelcomeViewController() : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //1.设置全局颜色
         UITabBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().tintColor = UIColor.orange
         //2.设置主窗口
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.backgroundColor = UIColor.white
-//        window?.rootViewController = MainViewController()
-//        window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        window?.rootViewController = defaultViewController
+        window?.makeKeyAndVisible()
         
         return true
     }
