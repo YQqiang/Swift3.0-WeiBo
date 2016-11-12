@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     fileprivate lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) -> () in
         self!.titleButton.isSelected = presented
     }
+    fileprivate lazy var statuses: [Status] = [Status]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class HomeViewController: BaseViewController {
         }
         //2.设置导航栏内容
         setupNavigationBar()
+        //3.请求数据
+        loadStatuses()
     }
 }
 
@@ -62,8 +65,45 @@ extension HomeViewController {
     }
 }
 
+// MARK:- 请求数据
+extension HomeViewController {
+    fileprivate func loadStatuses() {
+        NetWorkTools.shareInstance.loadStatuses { (result, error) in
+            //1.校验错误
+            if error != nil {
+                print(error!)
+                return
+            }
+            //2.获取可选类型中的数据
+            guard let resultArray = result else {
+                return
+            }
+            //3.遍历微博对应的字典
+            for statusDic in resultArray {
+                let status = Status(dic: statusDic)
+                self.statuses.append(status)
+//                print(statusDic)
+            }
+            //4.刷新单元格
+            self.tableView.reloadData()
+        }
+    }
+}
 
-
+// MARK:- tableView 的数据源方法
+extension HomeViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //1.创建cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell")!
+        //2.给cell设置数据
+        let status = statuses[indexPath.row]
+        cell.textLabel?.text = status.text
+        return cell
+    }
+}
 
 
 

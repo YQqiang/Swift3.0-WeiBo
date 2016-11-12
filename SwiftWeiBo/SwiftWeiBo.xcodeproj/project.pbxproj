@@ -39,6 +39,7 @@
 		C76A36511DC1F9B3001310E7 /* PopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76A364F1DC1F9B3001310E7 /* PopViewController.xib */; };
 		C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */; };
 		C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */; };
+		C7DC87CB1DD6BE95006BA5F7 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87CA1DD6BE95006BA5F7 /* Status.swift */; };
 		C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */; };
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
 		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
@@ -105,6 +106,7 @@
 		C76A364F1DC1F9B3001310E7 /* PopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopViewController.xib; sourceTree = "<group>"; };
 		C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 		C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		C7DC87CA1DD6BE95006BA5F7 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
 		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		C70D853D1DBF3A94009D01D0 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				C7DC87C91DD6BE6D006BA5F7 /* HomeModel */,
 				C76A364D1DC1F9A0001310E7 /* UIPopover */,
 				C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */,
 				C70644641DC09AE90045D613 /* HomeViewController.storyboard */,
@@ -334,6 +337,14 @@
 				C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */,
 			);
 			path = UIPopover;
+			sourceTree = "<group>";
+		};
+		C7DC87C91DD6BE6D006BA5F7 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				C7DC87CA1DD6BE95006BA5F7 /* Status.swift */,
+			);
+			name = HomeModel;
 			sourceTree = "<group>";
 		};
 		C7F07F5E1DD4610200CA83A8 /* Welcome */ = {
@@ -558,6 +569,7 @@
 				C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
 				C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */,
+				C7DC87CB1DD6BE95006BA5F7 /* Status.swift in Sources */,
 				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
 				C7425EAB1DD418D4006EA6CE /* NetWorkTools.swift in Sources */,
 				C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */,

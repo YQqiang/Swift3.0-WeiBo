@@ -77,4 +77,24 @@ extension NetWorkTools {
     }
 }
 
+// MARK:- 请求首页数据
+extension NetWorkTools {
+    func loadStatuses(finished: @escaping (_ result: [[String: AnyObject]]?, _ error: Error?) -> ()) -> () {
+        //1.获取请求的URLstring
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        //2.获取请求的参数
+        let parameters = ["access_token": UserAccountModel.shareIntance.account?.access_token!]
+        //3.发送网络请求
+        request(.GET, urlString: urlString, parameters: parameters as [String : AnyObject]) {
+            (result, error) -> () in
+            //1.获取字典的数据
+            guard let resultDic = result as? [String: AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //2.将数组数据回调给外界控制器
+            finished(resultDic["statuses"] as? [[String : AnyObject]], error)
+        }
+    }
+}
 
