@@ -21,7 +21,7 @@ extension NSDate {
         //3.创建当前时间
         let nowDate = Date()
         //4.计算创建时间和当前时间的差值
-        let interval = nowDate.timeIntervalSince(createDate)
+        let interval = Int(nowDate.timeIntervalSince(createDate))
         //5.对时间间隔处理
         //5.1显示刚刚
         if interval < 60 {

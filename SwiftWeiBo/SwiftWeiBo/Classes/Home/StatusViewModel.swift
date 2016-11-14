@@ -29,6 +29,10 @@ class StatusViewModel: NSObject {
      处理用户会员等级
      */
     var vipImage: UIImage?
+    /**
+     用户头像的处理
+     */
+    var profileURL: URL?
     
     // MARK:- 自定义构造函数
     init(status: Status) {
@@ -64,6 +68,9 @@ class StatusViewModel: NSObject {
         if mbrank > 0 && mbrank <= 6 {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
+        //5.用户头像的处理
+        let profileURLString = status.user?.profile_image_url ?? ""
+        profileURL = URL(string: profileURLString)
     }
 }
 
