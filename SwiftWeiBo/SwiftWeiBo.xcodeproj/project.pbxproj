@@ -40,6 +40,8 @@
 		C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */; };
 		C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */; };
 		C7DC87CB1DD6BE95006BA5F7 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87CA1DD6BE95006BA5F7 /* Status.swift */; };
+		C7DC87D01DD6E7FF006BA5F7 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87CF1DD6E7FF006BA5F7 /* NSDate-Extension.swift */; };
+		C7DC87D21DD6F29B006BA5F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87D11DD6F29B006BA5F7 /* User.swift */; };
 		C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */; };
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
 		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
@@ -107,6 +109,8 @@
 		C76A36521DC1FCF2001310E7 /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 		C79EFF881DC3423D007ED7EC /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		C7DC87CA1DD6BE95006BA5F7 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		C7DC87CF1DD6E7FF006BA5F7 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		C7DC87D11DD6F29B006BA5F7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
 		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 			children = (
 				C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */,
 				C76A36491DC1F311001310E7 /* UIBarButtonItem-Extension.swift */,
+				C7DC87CF1DD6E7FF006BA5F7 /* NSDate-Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				C7DC87CA1DD6BE95006BA5F7 /* Status.swift */,
+				C7DC87D11DD6F29B006BA5F7 /* User.swift */,
 			);
 			name = HomeModel;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7425EA71DD4099B006EA6CE /* Common.swift in Sources */,
+				C7DC87D01DD6E7FF006BA5F7 /* NSDate-Extension.swift in Sources */,
 				C70D854C1DBF3E8F009D01D0 /* DiscoverViewController.swift in Sources */,
 				C70D85101DBF399E009D01D0 /* ViewController.swift in Sources */,
 				C76A364A1DC1F311001310E7 /* UIBarButtonItem-Extension.swift in Sources */,
@@ -573,6 +580,7 @@
 				C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */,
 				C7425EAB1DD418D4006EA6CE /* NetWorkTools.swift in Sources */,
 				C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */,
+				C7DC87D21DD6F29B006BA5F7 /* User.swift in Sources */,
 				C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */,
 				C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */,
 				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,
