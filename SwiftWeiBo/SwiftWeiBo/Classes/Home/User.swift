@@ -21,34 +21,13 @@ class User: NSObject {
     /**
      用户的认证类型
      */
-    var verified_type: Int = -1 {
-        didSet {
-            switch verified_type {
-            case 0:
-                verifiedImage = #imageLiteral(resourceName: "avatar_vip")
-            case 2,3,5:
-                verifiedImage = #imageLiteral(resourceName: "avatar_enterprise_vip")
-            case 220:
-                verifiedImage = #imageLiteral(resourceName: "avatar_grassroot")
-            default:
-                verifiedImage = nil
-            }
-        }
-    }
+    var verified_type: Int = -1
     /**
      用户的会员等级
      */
-    var mbrank: Int = 0 {
-        didSet {
-            if mbrank > 0 && mbrank <= 6 {
-                vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
-            }
-        }
-    }
+    var mbrank: Int = 0
     
     // MARK:- 对用户数据处理
-    var verifiedImage: UIImage?
-    var vipImage: UIImage?
     
     // MARK:- 自定义构造函数
     init(dic: [String: AnyObject]) {

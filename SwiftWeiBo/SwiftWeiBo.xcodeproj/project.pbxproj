@@ -42,6 +42,7 @@
 		C7DC87CB1DD6BE95006BA5F7 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87CA1DD6BE95006BA5F7 /* Status.swift */; };
 		C7DC87D01DD6E7FF006BA5F7 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87CF1DD6E7FF006BA5F7 /* NSDate-Extension.swift */; };
 		C7DC87D21DD6F29B006BA5F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87D11DD6F29B006BA5F7 /* User.swift */; };
+		C7EA25631DD99609004C9168 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA25621DD99609004C9168 /* StatusViewModel.swift */; };
 		C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */; };
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
 		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
@@ -111,6 +112,7 @@
 		C7DC87CA1DD6BE95006BA5F7 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C7DC87CF1DD6E7FF006BA5F7 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		C7DC87D11DD6F29B006BA5F7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C7EA25621DD99609004C9168 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
 		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				C7DC87CA1DD6BE95006BA5F7 /* Status.swift */,
 				C7DC87D11DD6F29B006BA5F7 /* User.swift */,
+				C7EA25621DD99609004C9168 /* StatusViewModel.swift */,
 			);
 			name = HomeModel;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				C7425EAB1DD418D4006EA6CE /* NetWorkTools.swift in Sources */,
 				C76A364C1DC1F538001310E7 /* TitleButton.swift in Sources */,
 				C7DC87D21DD6F29B006BA5F7 /* User.swift in Sources */,
+				C7EA25631DD99609004C9168 /* StatusViewModel.swift in Sources */,
 				C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */,
 				C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */,
 				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,

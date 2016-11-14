@@ -13,33 +13,11 @@ class Status: NSObject {
     /**
      微博创建时间
      */
-    var created_at: String? {
-        didSet {
-            //1. nil值校验
-            guard let created_at = created_at else {
-                return
-            }
-            //2.对时间处理
-            createAtText = NSDate.createDateString(createAtStr: created_at)
-        }
-    }
+    var created_at: String?
     /**
      微博来源
      */
-    var source: String? {
-        didSet {
-            //1.nil 值校验
-            guard let source = source, source != "" else {
-                return
-            }
-            //2.对来源的字符串进行处理
-            let startIndex = (source as NSString).range(of: ">").location + 1
-            let lenth = (source as NSString).range(of: "</").location - startIndex
-            //3.截取字符串
-            sourceText = (source as NSString).substring(with: NSMakeRange(startIndex, lenth))
-            
-        }
-    }
+    var source: String?
     /**
      微博正文
      */
@@ -50,10 +28,7 @@ class Status: NSObject {
     var mid: Int = 0
     var user: User?
     
-    
     // MARK:- 对数据处理的属性
-    var sourceText: String?
-    var createAtText: String?
     
     // MARK:- 自定义构造函数
     init(dic: [String: AnyObject]) {
