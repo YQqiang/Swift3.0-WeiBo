@@ -81,6 +81,7 @@ extension HomeViewController {
         tipLabel.textAlignment = .center
         tipLabel.layer.cornerRadius = 10
         tipLabel.layer.masksToBounds = true
+        self.tipLabel.alpha = 0
         tipLabel.isHidden = true
     }
 }
@@ -186,9 +187,11 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.25, animations: {
             () -> Void in
             self.tipLabel.frame.origin.y = 44
+            self.tipLabel.alpha = 1.0
         }) { (_) -> Void in
             UIView.animate(withDuration: 0.25, delay: 1.0, options: [], animations: { () -> Void in
                 self.tipLabel.frame.origin.y = 10
+                self.tipLabel.alpha = 0
             }, completion: { (_) -> Void in
                 self.tipLabel.isHidden = true
             })
