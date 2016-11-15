@@ -122,7 +122,7 @@ extension HomeViewCell {
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         //6.四张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + itemMargin
+            let picViewWH = imageViewWH * 2 + itemMargin + 1
             return CGSize(width: picViewWH, height: picViewWH)
         }
         //7.其他张配图
