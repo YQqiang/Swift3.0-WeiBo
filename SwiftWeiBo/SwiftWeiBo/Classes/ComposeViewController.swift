@@ -57,6 +57,8 @@ extension ComposeViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(noti:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         //监听照片按钮的点击
         NotificationCenter.default.addObserver(self, selector: #selector(addPhotoClick), name: Notification.Name.init(PicPickerAddPhotoNote), object: nil)
+        //监听删除照片按钮的点击
+        NotificationCenter.default.addObserver(self, selector: #selector(removePhotoClick(noti:)), name: NSNotification.Name(rawValue: PicPickerRemovePhotoNote), object: nil)
     }
 }
 
@@ -112,6 +114,20 @@ extension ComposeViewController {
         //5.弹出选择照片的控制器
         present(ipc, animated: true, completion: nil)
     }
+    @objc fileprivate func removePhotoClick(noti: Notification) {
+        //1.获取image对象
+        guard let image = noti.object as? UIImage else {
+            return
+        }
+        //2.获取image对象所对应的下标值
+        guard let index = images.index(of: image) else {
+            return
+        }
+        //3.将图片从数组移除
+        images.remove(at: index)
+        //4.重新复制collectionView新的数组
+        picPickerView.images = images
+    }
 }
 
 // MARK:- UIImagePickerController的代理方法
@@ -122,7 +138,9 @@ extension ComposeViewController: UIImagePickerControllerDelegate, UINavigationCo
         //2.将选中的照片添加到数组中
         images.append(image)
         //3.将数组赋值给collectionView, 让collectionView自己去展示数据
-        
+        picPickerView.images = images
+        //4.退出选中照片控制器
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

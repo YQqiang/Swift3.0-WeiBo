@@ -10,15 +10,19 @@ import UIKit
 
 class PicPickerViewCell: UICollectionViewCell {
     @IBOutlet weak var addPhotoBtn: UIButton!
+    @IBOutlet weak var removePhotoBtn: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var image: UIImage? {
         didSet {
             if image != nil {
-                addPhotoBtn.setBackgroundImage(image, for: .normal)
+                imageView.image = image
                 addPhotoBtn.isUserInteractionEnabled = false
+                removePhotoBtn.isHidden = false
             } else {
-                addPhotoBtn.setBackgroundImage(#imageLiteral(resourceName: "compose_pic_add"), for: .normal)
+                imageView.image = nil
                 addPhotoBtn.isUserInteractionEnabled = true
+                removePhotoBtn.isHidden = true
             }
         }
     }
@@ -28,6 +32,9 @@ class PicPickerViewCell: UICollectionViewCell {
     }
     @IBAction func addPhotoClick() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
+    }
+    @IBAction func removePhotoClick() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: PicPickerRemovePhotoNote), object: imageView.image)
     }
 
 }

@@ -15,3 +15,4 @@ let redirect_uri = "http://www.yuqiang.com"
 
 // MARK:- 选择照片的通知常量
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
+let PicPickerRemovePhotoNote = "PicPickerRemovePhotoNote"
