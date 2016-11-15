@@ -23,11 +23,15 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
+    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedBgView: UIView!
+    @IBOutlet weak var bottomToolView: UIView!
     
     // MARK:- 约束的属性
     @IBOutlet weak var contentLabelWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetedContentLabelTopCons: NSLayoutConstraint!
     
     // MARK:- 自定义属性
     var viewModel: StatusViewModel? {
@@ -58,6 +62,27 @@ class HomeViewCell: UITableViewCell {
             picViewWCons.constant = picViewSize.width
             //11.将picURL数据传递给picView
             picView.picUrls = viewModel.picURLs
+            //12.设置转发微博的正文
+            if viewModel.status?.retweeted_status != nil {
+                //12.1设置转发微博的正文
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.status?.retweeted_status?.text {
+                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
+                    retweetedContentLabelTopCons.constant = 15
+                }
+                //12.2设置背景显示
+                retweetedBgView.isHidden = false
+            } else {
+                retweetedContentLabel.text = nil
+                retweetedBgView.isHidden = true
+                retweetedContentLabelTopCons.constant = 0
+            }
+            //13.计算cell的高度
+            if viewModel.cellHeight == 0 {
+                //13.1强制布局
+                layoutIfNeeded()
+                //13.2获取底部工具栏的最大Y值
+                viewModel.cellHeight = bottomToolView.frame.maxY
+            }
         }
     }
     

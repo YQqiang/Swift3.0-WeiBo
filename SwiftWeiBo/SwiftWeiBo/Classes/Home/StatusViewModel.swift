@@ -11,6 +11,10 @@ import UIKit
 class StatusViewModel: NSObject {
     // MARK:- 定义属性
     var status: Status?
+    /**
+     单元格的高度
+     */
+    var cellHeight: CGFloat = 0
     
     // MARK:- 对数据处理的属性
     /**
@@ -76,7 +80,7 @@ class StatusViewModel: NSObject {
         let profileURLString = status.user?.profile_image_url ?? ""
         profileURL = URL(string: profileURLString)
         //6.处理配图数据
-        if let picUrlDicts = status.pic_urls {
+        if let picUrlDicts = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls {
             for picUrlDic in picUrlDicts {
                 guard let picUrlString = picUrlDic["thumbnail_pic"] else {
                     continue
