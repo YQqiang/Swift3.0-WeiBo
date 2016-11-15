@@ -26,6 +26,14 @@ class Status: NSObject {
      微博的ID
      */
     var mid: Int = 0
+    /**
+     微博的配图
+     */
+    var pic_urls: [[String: String]]?
+    /**
+     转发的微博
+     */
+    var retweeted_status: Status?
     var user: User?
     
     // MARK:- 对数据处理的属性
@@ -37,6 +45,10 @@ class Status: NSObject {
         //1.将用户字典转为用户模型对象
         if let userDic = dic["user"] as? [String : AnyObject] {
             user = User(dic: userDic)
+        }
+        //2.将转发微博字典转换为转发微博模型对象
+        if let retweetedStatusDict = dic["retweeted_status"] as? [String: AnyObject] {
+            retweeted_status = Status(dic: retweetedStatusDict)
         }
     }
     

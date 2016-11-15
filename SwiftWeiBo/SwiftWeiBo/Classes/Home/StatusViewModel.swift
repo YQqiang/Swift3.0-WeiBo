@@ -33,6 +33,10 @@ class StatusViewModel: NSObject {
      用户头像的处理
      */
     var profileURL: URL?
+    /**
+     处理微博配图的数据
+     */
+    var picURLs: [URL] = [URL]()
     
     // MARK:- 自定义构造函数
     init(status: Status) {
@@ -71,6 +75,15 @@ class StatusViewModel: NSObject {
         //5.用户头像的处理
         let profileURLString = status.user?.profile_image_url ?? ""
         profileURL = URL(string: profileURLString)
+        //6.处理配图数据
+        if let picUrlDicts = status.pic_urls {
+            for picUrlDic in picUrlDicts {
+                guard let picUrlString = picUrlDic["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs.append(URL(string: picUrlString)!)
+            }
+        }
     }
 }
 

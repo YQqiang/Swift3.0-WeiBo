@@ -10,6 +10,8 @@ import UIKit
 import SDWebImage
 
 private let edgeMargin: CGFloat = 15
+private let itemMargin: CGFloat = 10
+
 class HomeViewCell: UITableViewCell {
 
     // MARK:- 控件的属性
@@ -20,9 +22,12 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var picView: PicCollectionView!
     
     // MARK:- 约束的属性
     @IBOutlet weak var contentLabelWCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     
     // MARK:- 自定义属性
     var viewModel: StatusViewModel? {
@@ -47,6 +52,12 @@ class HomeViewCell: UITableViewCell {
             contentLabel.text = viewModel.status?.text
             //9.设置昵称的颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
+            //10.计算picView的宽度和高度约束
+            let picViewSize = calculatePicViewSize(count: viewModel.picURLs.count)
+            picViewHCons.constant = picViewSize.height
+            picViewWCons.constant = picViewSize.width
+            //11.将picURL数据传递给picView
+            picView.picUrls = viewModel.picURLs
         }
     }
     
@@ -56,11 +67,49 @@ class HomeViewCell: UITableViewCell {
         //1.设置正文的宽度约束
         contentLabelWCons.constant = UIScreen.main.bounds.width - 2 * edgeMargin
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
+
+// MARK:- 计算方法
+extension HomeViewCell {
+    fileprivate func calculatePicViewSize(count: Int) -> CGSize {
+        //1.没有配图
+        if count == 0 {
+            return CGSize(width: 0, height: 0)
+        }
+        //2.取出pieView对应的layout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+        //3. 单张配图
+        if count == 1 {
+            //3.1取出图片
+            let urlString = viewModel?.picURLs.last?.absoluteString
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
+            //3.2设置一张图片是itemsize
+            layout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+        }
+        //4.计算出来imageViewWH
+        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
+        //5.设置其他张配图时layout的itemSize
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+        //6.四张配图
+        if count == 4 {
+            let picViewWH = imageViewWH * 2 + itemMargin
+            return CGSize(width: picViewWH, height: picViewWH)
+        }
+        //7.其他张配图
+        //7.1 计算行数
+        let rows = CGFloat((count - 1) / 3 + 1)
+        //7.2 计算picView的高度
+        let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
+        //7.3 计算picView的宽度
+        let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin
+        
+        return CGSize(width: picViewW, height: picViewH)
+    }
+}
+
+
+
+
+
+

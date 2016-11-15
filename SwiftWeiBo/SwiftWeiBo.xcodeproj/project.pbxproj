@@ -44,6 +44,7 @@
 		C7DC87D21DD6F29B006BA5F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DC87D11DD6F29B006BA5F7 /* User.swift */; };
 		C7EA25631DD99609004C9168 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA25621DD99609004C9168 /* StatusViewModel.swift */; };
 		C7EA25651DD9A150004C9168 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA25641DD9A150004C9168 /* HomeViewCell.swift */; };
+		C7EA25671DD9D270004C9168 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA25661DD9D270004C9168 /* PicCollectionView.swift */; };
 		C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */; };
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
 		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
@@ -115,6 +116,7 @@
 		C7DC87D11DD6F29B006BA5F7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7EA25621DD99609004C9168 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C7EA25641DD9A150004C9168 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewCell.swift; path = UIPopover/HomeViewCell.swift; sourceTree = "<group>"; };
+		C7EA25661DD9D270004C9168 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		C7F07F5A1DD4387600CA83A8 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
 		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				C7DC87C91DD6BE6D006BA5F7 /* HomeModel */,
 				C76A364D1DC1F9A0001310E7 /* UIPopover */,
 				C7EA25641DD9A150004C9168 /* HomeViewCell.swift */,
+				C7EA25661DD9D270004C9168 /* PicCollectionView.swift */,
 				C70D854D1DBF3E9F009D01D0 /* HomeViewController.swift */,
 				C70644641DC09AE90045D613 /* HomeViewController.storyboard */,
 			);
@@ -591,6 +594,7 @@
 				C7EA25631DD99609004C9168 /* StatusViewModel.swift in Sources */,
 				C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */,
 				C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */,
+				C7EA25671DD9D270004C9168 /* PicCollectionView.swift in Sources */,
 				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
