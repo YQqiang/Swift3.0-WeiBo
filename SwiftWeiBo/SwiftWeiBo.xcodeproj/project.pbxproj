@@ -31,6 +31,7 @@
 		C70E39681DDABF9100D4B6C1 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */; };
 		C70E39691DDABF9100D4B6C1 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */; };
 		C70E396B1DDAD4CE00D4B6C1 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */; };
+		C70E396D1DDAD9F100D4B6C1 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E396C1DDAD9F100D4B6C1 /* ComposeTextView.swift */; };
 		C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */; };
 		C7425EA41DD3FE9F006EA6CE /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7425EA21DD3FE9F006EA6CE /* OAuthViewController.swift */; };
 		C7425EA51DD3FE9F006EA6CE /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7425EA31DD3FE9F006EA6CE /* OAuthViewController.xib */; };
@@ -106,6 +107,7 @@
 		C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		C70E396C1DDAD9F100D4B6C1 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		C7425EA21DD3FE9F006EA6CE /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C7425EA31DD3FE9F006EA6CE /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */,
+				C70E396C1DDAD9F100D4B6C1 /* ComposeTextView.swift */,
 				C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */,
 				C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */,
 			);
@@ -597,6 +600,7 @@
 				C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */,
 				C7425EA41DD3FE9F006EA6CE /* OAuthViewController.swift in Sources */,
 				C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */,
+				C70E396D1DDAD9F100D4B6C1 /* ComposeTextView.swift in Sources */,
 				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
 				C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */,
 				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
