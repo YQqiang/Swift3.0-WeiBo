@@ -28,6 +28,9 @@
 		C70D85501DBF3EA9009D01D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */; };
 		C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */; };
 		C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */; };
+		C70E39681DDABF9100D4B6C1 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */; };
+		C70E39691DDABF9100D4B6C1 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */; };
+		C70E396B1DDAD4CE00D4B6C1 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */; };
 		C73435521DC19A7E00A6D138 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */; };
 		C7425EA41DD3FE9F006EA6CE /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7425EA21DD3FE9F006EA6CE /* OAuthViewController.swift */; };
 		C7425EA51DD3FE9F006EA6CE /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7425EA31DD3FE9F006EA6CE /* OAuthViewController.xib */; };
@@ -100,6 +103,9 @@
 		C70D854F1DBF3EA9009D01D0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C70D85511DBF3EB3009D01D0 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C70D85531DBF3EBD009D01D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
 		C73435511DC19A7E00A6D138 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		C7425EA21DD3FE9F006EA6CE /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		C7425EA31DD3FE9F006EA6CE /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		C70D853B1DBF3A94009D01D0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C70E39651DDABF6800D4B6C1 /* Compose(发布) */,
 				C70D853E1DBF3A94009D01D0 /* Main(主要) */,
 				C70D853D1DBF3A94009D01D0 /* Home(首页) */,
 				C70D853F1DBF3A94009D01D0 /* Message(消息) */,
@@ -307,6 +314,16 @@
 			);
 			name = "Profile(我)";
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		C70E39651DDABF6800D4B6C1 /* Compose(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				C70E396A1DDAD4CE00D4B6C1 /* ComposeTitleView.swift */,
+				C70E39661DDABF9100D4B6C1 /* ComposeViewController.swift */,
+				C70E39671DDABF9100D4B6C1 /* ComposeViewController.xib */,
+			);
+			name = "Compose(发布)";
 			sourceTree = "<group>";
 		};
 		C734354F1DC199E400A6D138 /* Tools */ = {
@@ -495,6 +512,7 @@
 				C70D85151DBF399E009D01D0 /* Assets.xcassets in Resources */,
 				C70D85131DBF399E009D01D0 /* Main.storyboard in Resources */,
 				C706445B1DC05D040045D613 /* MessageViewController.storyboard in Resources */,
+				C70E39691DDABF9100D4B6C1 /* ComposeViewController.xib in Resources */,
 				C706445F1DC05D120045D613 /* ProfileViewController.storyboard in Resources */,
 				C70644511DC037F80045D613 /* VisitorView.xib in Resources */,
 			);
@@ -582,6 +600,7 @@
 				C70D854E1DBF3E9F009D01D0 /* HomeViewController.swift in Sources */,
 				C70D85541DBF3EBD009D01D0 /* ProfileViewController.swift in Sources */,
 				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
+				C70E396B1DDAD4CE00D4B6C1 /* ComposeTitleView.swift in Sources */,
 				C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
 				C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */,
@@ -596,6 +615,7 @@
 				C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */,
 				C7EA25671DD9D270004C9168 /* PicCollectionView.swift in Sources */,
 				C706444F1DC037E80045D613 /* VisitorView.swift in Sources */,
+				C70E39681DDABF9100D4B6C1 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

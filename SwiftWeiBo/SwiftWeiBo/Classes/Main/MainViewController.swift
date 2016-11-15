@@ -197,7 +197,12 @@ extension MainViewController {
     //如果Swift中将一个函数声明为private, 那么该函数不会被添加到方法列表中
     //如果在private 前加上 @objc ,那么该方法依然会被添加到方法列表中
     @objc fileprivate func clickcomposeBtn() {
-        print("点击了发布按钮")
+        //1.创建发布控制器
+        let composeVc = ComposeViewController()
+        //2.包装导航控制器
+        let composeNav = UINavigationController(rootViewController: composeVc)
+        //3.模态出发布控制器
+        present(composeNav, animated: true, completion: nil)
     }
 }
 
