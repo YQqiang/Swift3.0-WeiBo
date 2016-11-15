@@ -22,6 +22,7 @@ class HomeViewController: BaseViewController {
         self!.titleButton.isSelected = presented
     }
     fileprivate lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
+    fileprivate lazy var tipLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class HomeViewController: BaseViewController {
         //4.布局header
         setupHeader()
         setupFooter()
+        //5.设置提示的Label
+        setupTipLabel()
     }
 }
 
@@ -65,6 +68,20 @@ extension HomeViewController {
     }
     fileprivate func setupFooter() {
         tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreStatuses))
+    }
+    fileprivate func setupTipLabel() {
+        //1.将tipLabel放到父控件中
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        //2.设置tipLabel的frame
+        tipLabel.frame = CGRect(x: 0, y: 10, width: UIScreen.main.bounds.width, height: 32)
+        //3.设置tipLabel的属性
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.textAlignment = .center
+        tipLabel.layer.cornerRadius = 10
+        tipLabel.layer.masksToBounds = true
+        tipLabel.isHidden = true
     }
 }
 
@@ -158,6 +175,23 @@ extension HomeViewController {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            //显示提示的Label
+            self.showTipLabel(count: viewModels.count)
+        }
+    }
+    private func showTipLabel(count: Int) {
+        //1.设置tipLabel的属性
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新微薄" : "\(count)条新微薄"
+        UIView.animate(withDuration: 0.25, animations: {
+            () -> Void in
+            self.tipLabel.frame.origin.y = 44
+        }) { (_) -> Void in
+            UIView.animate(withDuration: 0.25, delay: 1.0, options: [], animations: { () -> Void in
+                self.tipLabel.frame.origin.y = 10
+            }, completion: { (_) -> Void in
+                self.tipLabel.isHidden = true
+            })
         }
     }
 }
