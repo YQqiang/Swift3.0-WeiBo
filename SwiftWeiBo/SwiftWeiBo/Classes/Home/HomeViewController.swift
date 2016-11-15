@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
     // MARK:- 属性
@@ -31,10 +32,12 @@ class HomeViewController: BaseViewController {
         }
         //2.设置导航栏内容
         setupNavigationBar()
-        //3.请求数据
-        loadStatuses()
+        //3.自动计算cell高度
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        //4.布局header
+        setupHeader()
+        setupFooter()
     }
 }
 
@@ -47,6 +50,21 @@ extension HomeViewController {
         titleButton.setTitle("逆行云", for: .normal)
         titleButton.addTarget(self, action: #selector(HomeViewController.clickTitleBtn(_:)), for: .touchUpInside)
         navigationItem.titleView = titleButton
+    }
+    fileprivate func setupHeader() {
+        //1.创建headerView
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewStatuses))
+        //2.设置header的属性
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放更新", for: .pulling)
+        header?.setTitle("加载中...", for: .refreshing)
+        //3.设置tableView的header
+        tableView.mj_header = header
+        //4.进入刷新状态
+        tableView.mj_header.beginRefreshing()
+    }
+    fileprivate func setupFooter() {
+        tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreStatuses))
     }
 }
 
@@ -70,11 +88,30 @@ extension HomeViewController {
 
 // MARK:- 请求数据
 extension HomeViewController {
-    fileprivate func loadStatuses() {
-        NetWorkTools.shareInstance.loadStatuses { (result, error) in
+    @objc fileprivate func loadNewStatuses() {
+        loadStatuses(isNewData: true)
+    }
+    @objc fileprivate func loadMoreStatuses() {
+        loadStatuses(isNewData: false)
+    }
+    
+    fileprivate func loadStatuses(isNewData: Bool) {
+        //获取sinceId/max_id
+        var since_id = 0
+        var max_id = 0
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : max_id - 1
+        }
+        
+        NetWorkTools.shareInstance.loadStatuses(since_id: since_id, max_id: max_id) { (result, error) in
             //1.校验错误
             if error != nil {
                 print(error!)
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 return
             }
             //2.获取可选类型中的数据
@@ -82,14 +119,21 @@ extension HomeViewController {
                 return
             }
             //3.遍历微博对应的字典
+            var tempViewModels = [StatusViewModel]()
             for statusDic in resultArray {
                 let status = Status(dic: statusDic)
                 let viewModel = StatusViewModel(status: status)
-                self.viewModels.append(viewModel)
+                tempViewModels.append(viewModel)
 //                print(statusDic)
             }
+            //4.将数据放入到成员变量的数组中
+            if isNewData {
+                self.viewModels = tempViewModels + self.viewModels
+            } else {
+                self.viewModels += tempViewModels
+            }
             //4.缓存图片
-            self.cacheImages(viewModels: self.viewModels)
+            self.cacheImages(viewModels: tempViewModels)
         }
     }
 }
@@ -112,6 +156,8 @@ extension HomeViewController {
         //2.刷新表格
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
 }
