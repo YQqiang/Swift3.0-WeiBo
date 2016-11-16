@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
 
@@ -74,6 +75,25 @@ extension ComposeViewController {
     }
     @objc fileprivate func sendItemClick() {
         print("sendItemClick")
+        //0.退出键盘
+        textView.resignFirstResponder()
+        //1.获取发送微博的正文
+        let statusText = textView.getEmoticonString()
+        //2.定义回调的闭包
+        let finishedCallback = { (isSuccess: Bool) -> () in
+            if !isSuccess {
+                SVProgressHUD.showError(withStatus: "发送微博失败")
+                return
+            }
+            SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+            self.dismiss(animated: true, completion: nil)
+        }
+        //3.获取用户选中的图片
+        if let image = images.first {
+            NetWorkTools.shareInstance.sendStatus(statusText, image: image, isSuccess: finishedCallback)
+        } else {
+            NetWorkTools.shareInstance.sendStatus(statusText, isSuccess: finishedCallback)
+        }
     }
     @objc fileprivate func keyboardWillChangeFrame(noti: Notification) {
         //1.获取动画执行的时间
