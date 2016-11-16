@@ -13,6 +13,10 @@ class ComposeViewController: UIViewController {
     // MARK:- 懒加载属性
     fileprivate lazy var composeTitleView: ComposeTitleView = ComposeTitleView()
     fileprivate lazy var images:[UIImage] = [UIImage]()
+    fileprivate lazy var emoticonVc : EmoticonController = EmoticonController {[weak self] (emoticon) -> () in
+        self?.textView.insertEmoticon(emoticon)
+        self?.textViewDidChange(self!.textView)
+    }
     
     // MARK:- 控件属性
     @IBOutlet weak var textView: ComposeTextView!
@@ -95,6 +99,14 @@ extension ComposeViewController {
             () -> Void in
             self.view.layoutIfNeeded()
         })
+    }
+    @IBAction func emoticonBtnClick() {
+        //1.退出键盘
+        textView.resignFirstResponder()
+        //2.切换键盘
+        textView.inputView = textView.inputView != nil ? nil : emoticonVc.view
+        //3.弹出键盘
+        textView.becomeFirstResponder()
     }
 }
 
