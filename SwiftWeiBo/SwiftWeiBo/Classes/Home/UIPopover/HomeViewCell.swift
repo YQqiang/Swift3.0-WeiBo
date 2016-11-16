@@ -57,7 +57,7 @@ class HomeViewCell: UITableViewCell {
                 sourceLabel.text = nil
             }
             //8.设置正文内容
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareIntance.findAttrString(viewModel.status?.text, font: contentLabel.font)
             //9.设置昵称的颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
             //10.计算picView的宽度和高度约束
