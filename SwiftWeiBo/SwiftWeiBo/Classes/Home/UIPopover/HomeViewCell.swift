@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import HYLabel
 
 private let edgeMargin: CGFloat = 15
 private let itemMargin: CGFloat = 10
@@ -21,9 +22,9 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var picView: PicCollectionView!
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     @IBOutlet weak var retweetedBgView: UIView!
     @IBOutlet weak var bottomToolView: UIView!
     
@@ -95,6 +96,45 @@ class HomeViewCell: UITableViewCell {
         super.awakeFromNib()
         //1.设置正文的宽度约束
         contentLabelWCons.constant = UIScreen.main.bounds.width - 2 * edgeMargin
+        //2.设置HYLabel的内容
+        contentLabel.matchTextColor = UIColor.purple
+        retweetedContentLabel.matchTextColor = UIColor.purple
+        //3.监听HYLabel内容的点击
+        contentLabel.userTapHandler = {
+            (label, user, range) -> () in
+            print(user)
+            print(range)
+        }
+        //4.监听链接的点击
+        contentLabel.linkTapHandler = {
+            (label, link, range) in
+            print(link)
+            print(range)
+        }
+        //5.监听话题的点击
+        contentLabel.topicTapHandler = {
+            (label, topic, range) in
+            print(topic)
+            print(range)
+        }
+        //3.监听HYLabel内容的点击
+        retweetedContentLabel.userTapHandler = {
+            (label, user, range) -> () in
+            print(user)
+            print(range)
+        }
+        //4.监听链接的点击
+        retweetedContentLabel.linkTapHandler = {
+            (label, link, range) in
+            print(link)
+            print(range)
+        }
+        //5.监听话题的点击
+        retweetedContentLabel.topicTapHandler = {
+            (label, topic, range) in
+            print(topic)
+            print(range)
+        }
     }
 }
 
