@@ -23,6 +23,7 @@ class HomeViewController: BaseViewController {
     }
     fileprivate lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
     fileprivate lazy var tipLabel: UILabel = UILabel()
+    fileprivate lazy var photoBrowserAnimator: PhotoBrowserAnimator = PhotoBrowserAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,8 @@ extension HomeViewController {
         let picUrls = noti.userInfo?[ShowPhotoBrowserUrlsKey]
         //2.弹出照片浏览器
         let photoBrowserVc = PhotoBrowserController.init(indexPath: indexPath as! IndexPath, picUrls: picUrls as! [URL])
+        photoBrowserVc.modalPresentationStyle = .custom
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
         present(photoBrowserVc, animated: true, completion: nil)
     }
 }
