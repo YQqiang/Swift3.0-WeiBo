@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 private let PhotoBrowserCell = "PhotoBrowserCell"
 
@@ -32,10 +33,18 @@ class PhotoBrowserController: UIViewController {
     }
     
     // MARK:- 系统回调函数
+    override func loadView() {
+        super.loadView()
+        view.backgroundColor = UIColor(white: 1.0, alpha: 0.4)
+        view.bounds.size.width += 20
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //1.设置界面
         seupUI()
+        //2.滚动到对应的图片
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
 }
 
@@ -46,7 +55,7 @@ extension PhotoBrowserController {
         view.addSubview(collectionView)
         view.addSubview(closeBtn)
         view.addSubview(saveBtn)
-        
+        collectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.4)
         //2.设置frame
         collectionView.frame = view.bounds
         closeBtn.snp.makeConstraints { (make) in
@@ -74,10 +83,24 @@ extension PhotoBrowserController {
         dismiss(animated: true, completion: nil)
     }
     @objc fileprivate func saveBtnAction() {
-        
+        //1.获取当前正在显示的image
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        guard let image = cell.imageView.image else {
+            return
+        }
+        //2.将image对象保存相册
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    @objc fileprivate func image(image: UIImage, didFinishSavingWithError error: Error?, contextInfo: Any) {
+        var showInfo = ""
+        if error != nil {
+            showInfo = "保存失败"
+        } else {
+            showInfo = "保存成功"
+        }
+        SVProgressHUD.showInfo(withStatus: showInfo)
     }
 }
-
 
 // MARK:- UICollectionViewDataSource
 extension PhotoBrowserController: UICollectionViewDataSource {
@@ -87,7 +110,14 @@ extension PhotoBrowserController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath) as! PhotoBrowserViewCell
         cell.picUrl = picUrls[indexPath.item]
+        cell.delegate = self
         return cell
+    }
+}
+
+extension PhotoBrowserController: PhotoBrowserViewCellDelegate {
+    func imageClick() {
+        closeBtnAciton()
     }
 }
 

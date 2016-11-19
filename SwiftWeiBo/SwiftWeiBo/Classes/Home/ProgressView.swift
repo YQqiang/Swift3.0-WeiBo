@@ -31,7 +31,7 @@ class ProgressView: UIView {
         path.addLine(to: center)
         path.close()
         //设置绘制的颜色
-        UIColor(white: 1.0, alpha: 0.4).setFill()
+        UIColor(white: 0.8, alpha: 0.6).setFill()
         path.fill()
     }
 }

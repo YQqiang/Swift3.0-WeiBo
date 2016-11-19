@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol PhotoBrowserViewCellDelegate: NSObjectProtocol {
+    func imageClick()
+}
+
 class PhotoBrowserViewCell: UICollectionViewCell {
     
     // MARK:- 定义属性
@@ -32,18 +36,25 @@ class PhotoBrowserViewCell: UICollectionViewCell {
             imageView.frame = CGRect(x: 0, y: y, width: width, height: height)
             
             // 4.设置imagView的图片
-            
-            
-            
-            imageView.image = image
+            progressView.isHidden = false
+            imageView.sd_setImage(with: getBigURL(smallUrl: picUrl), placeholderImage: image, options: [], progress: {
+                (current, total) -> Void in
+                self.progressView.process = CGFloat(current) / CGFloat(total)
+            }, completed: {
+                (image, _, _, _) -> Void in
+                self.progressView.isHidden = true
+                self.imageView.image = image
+            })
+            scrollView.contentSize = CGSize(width: 0, height: height)
         }
     }
     
+    var delegate: PhotoBrowserViewCellDelegate?
     
     // MARK:- 懒加载属性
     fileprivate lazy var scrollView: UIScrollView = UIScrollView()
-    fileprivate lazy var imageView: UIImageView = UIImageView()
     fileprivate lazy var progressView: ProgressView = ProgressView()
+    lazy var imageView: UIImageView = UIImageView()
     
     // MARK:- 构造函数
     override init(frame: CGRect) {
@@ -59,10 +70,29 @@ class PhotoBrowserViewCell: UICollectionViewCell {
 // MARK:- 设置UI界面
 extension PhotoBrowserViewCell {
     fileprivate func setupUI() {
+        contentView.backgroundColor = UIColor(white: 1.0, alpha: 0.4)
         contentView.addSubview(scrollView)
-        contentView.addSubview(imageView)
-        contentView.addSubview(ProgressView)
+        contentView.addSubview(progressView)
+        scrollView.addSubview(imageView)
         scrollView.frame = contentView.bounds
+        scrollView.frame.size.width -= 20
+        progressView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        progressView.center = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.5)
+        progressView.isHidden = true
+        progressView.backgroundColor = UIColor.clear
+        
+        //监听imageView的点击
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickImageViewAction))
+        imageView.addGestureRecognizer(tap)
+    }
+    fileprivate func getBigURL(smallUrl: URL) -> (URL) {
+        let smallUrlStr = smallUrl.absoluteString
+        let bigUrlStr = smallUrlStr.replacingOccurrences(of: "thumbnail", with: "bmiddle")
+        return URL(string: bigUrlStr)!
+    }
+    @objc fileprivate func clickImageViewAction() {
+        delegate?.imageClick()
     }
 }
 
