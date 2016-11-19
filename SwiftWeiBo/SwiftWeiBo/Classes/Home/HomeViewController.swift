@@ -41,6 +41,8 @@ class HomeViewController: BaseViewController {
         setupFooter()
         //5.设置提示的Label
         setupTipLabel()
+        //6.监听通知
+        setupNotiications()
     }
 }
 
@@ -83,6 +85,17 @@ extension HomeViewController {
         tipLabel.layer.masksToBounds = true
         self.tipLabel.alpha = 0
         tipLabel.isHidden = true
+    }
+    fileprivate func setupNotiications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser), name: Notification.Name(ShowPhotoBrowserNote), object: nil);
+    }
+    @objc fileprivate func showPhotoBrowser(noti: Notification) {
+        //1.取出通知的信息
+        let indexPath = noti.userInfo?[ShowPhotoBrowserIndexKey]
+        let picUrls = noti.userInfo?[ShowPhotoBrowserUrlsKey]
+        //2.弹出照片浏览器
+        let photoBrowserVc = PhotoBrowserController.init(indexPath: indexPath as! IndexPath, picUrls: picUrls as! [URL])
+        present(photoBrowserVc, animated: true, completion: nil)
     }
 }
 

@@ -20,6 +20,7 @@ class PicCollectionView: UICollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
         dataSource = self
+        delegate = self
     }
 }
 
@@ -36,6 +37,16 @@ extension PicCollectionView: UICollectionViewDataSource {
         cell.picUrl = picUrls[indexPath.item]
         
         return cell
+    }
+}
+
+// MARK:- collectionView 的代理方法
+extension PicCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //1.构建通知需要传递信息的数组
+        let userInfo = [ShowPhotoBrowserIndexKey: indexPath, ShowPhotoBrowserUrlsKey: picUrls] as [String : Any]
+        //2.发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(ShowPhotoBrowserNote), object: nil, userInfo: userInfo)
     }
 }
 

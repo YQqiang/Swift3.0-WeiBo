@@ -65,6 +65,9 @@
 		C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */; };
 		C7F07F611DD4611900CA83A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */; };
 		C7F07F621DD4611900CA83A8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */; };
+		C7F431811DDFEB9B000753F0 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F431801DDFEB9B000753F0 /* PhotoBrowserController.swift */; };
+		C7F431831DDFF93C000753F0 /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F431821DDFF93C000753F0 /* PhotoBrowserViewCell.swift */; };
+		C7F431851DE00050000753F0 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F431841DE00050000753F0 /* ProgressView.swift */; };
 		ED9A1F49C34DFD42EAD9A231 /* Pods_SwiftWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EB2F69623F05DC43A7B434 /* Pods_SwiftWeiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +156,9 @@
 		C7F07F5C1DD45A7E00CA83A8 /* UserAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountModel.swift; sourceTree = "<group>"; };
 		C7F07F5F1DD4611900CA83A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		C7F431801DDFEB9B000753F0 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
+		C7F431821DDFF93C000753F0 /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
+		C7F431841DE00050000753F0 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +304,7 @@
 		C70D853D1DBF3A94009D01D0 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				C7F4317F1DDFEB72000753F0 /* PhotoBrowser */,
 				C7DC87C91DD6BE6D006BA5F7 /* HomeModel */,
 				C76A364D1DC1F9A0001310E7 /* UIPopover */,
 				C7EA25641DD9A150004C9168 /* HomeViewCell.swift */,
@@ -449,6 +456,16 @@
 				C7F07F601DD4611900CA83A8 /* WelcomeViewController.xib */,
 			);
 			name = Welcome;
+			sourceTree = "<group>";
+		};
+		C7F4317F1DDFEB72000753F0 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C7F431801DDFEB9B000753F0 /* PhotoBrowserController.swift */,
+				C7F431821DDFF93C000753F0 /* PhotoBrowserViewCell.swift */,
+				C7F431841DE00050000753F0 /* ProgressView.swift */,
+			);
+			name = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -657,6 +674,7 @@
 				C7CEC4801DDBEDB000FDD45B /* Emoticon.swift in Sources */,
 				C70D854C1DBF3E8F009D01D0 /* DiscoverViewController.swift in Sources */,
 				C70D85101DBF399E009D01D0 /* ViewController.swift in Sources */,
+				C7F431851DE00050000753F0 /* ProgressView.swift in Sources */,
 				C76A364A1DC1F311001310E7 /* UIBarButtonItem-Extension.swift in Sources */,
 				C70D850E1DBF399E009D01D0 /* AppDelegate.swift in Sources */,
 				C7F07F5B1DD4387600CA83A8 /* UserAccount.swift in Sources */,
@@ -673,6 +691,7 @@
 				C70644551DC0384C0045D613 /* BaseViewController.swift in Sources */,
 				C70E39701DDAEFF000D4B6C1 /* PicPickerCollectionView.swift in Sources */,
 				C70E396B1DDAD4CE00D4B6C1 /* ComposeTitleView.swift in Sources */,
+				C7F431831DDFF93C000753F0 /* PhotoBrowserViewCell.swift in Sources */,
 				C76A36501DC1F9B3001310E7 /* PopViewController.swift in Sources */,
 				C70D85521DBF3EB3009D01D0 /* MessageViewController.swift in Sources */,
 				C79EFF891DC3423D007ED7EC /* PopoverAnimator.swift in Sources */,
@@ -686,6 +705,7 @@
 				C7EA25651DD9A150004C9168 /* HomeViewCell.swift in Sources */,
 				C7CEC47B1DDBEDB000FDD45B /* EmioticonViewCell.swift in Sources */,
 				C7EA25631DD99609004C9168 /* StatusViewModel.swift in Sources */,
+				C7F431811DDFEB9B000753F0 /* PhotoBrowserController.swift in Sources */,
 				C76A36531DC1FCF2001310E7 /* PresentationViewController.swift in Sources */,
 				C7F07F5D1DD45A7E00CA83A8 /* UserAccountModel.swift in Sources */,
 				C7EA25671DD9D270004C9168 /* PicCollectionView.swift in Sources */,
