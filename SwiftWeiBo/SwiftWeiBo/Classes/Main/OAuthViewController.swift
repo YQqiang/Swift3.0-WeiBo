@@ -57,7 +57,7 @@ extension OAuthViewController {
     }
     @objc fileprivate func fillItemClick() {
         //1.书写js代码   JavaScript / Java   ---->   雷锋 / 雷峰塔
-        let jsCode = "document.getElementById('userId').value='1054572107@qq.com';document.getElementById('passwd').value='yuqiang...';"
+        let jsCode = "document.getElementById('userId').value='';document.getElementById('passwd').value='';"
         //2.执行js代码
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
